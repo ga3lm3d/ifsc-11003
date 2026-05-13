@@ -1,0 +1,394 @@
+/* --------------------
+   Base Styles
+-------------------- */
+
+:root {
+  --space-black: #050816;
+  --deep-blue: #0b1f3a;
+  --mars-red: #c1440e;
+  --mars-orange: #e77d11;
+  --star-white: #f7f7f7;
+  --soft-gray: #d9dee8;
+  --panel-blue: #132b4f;
+  --accent-blue: #3aa7ff;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--star-white);
+  background:
+    radial-gradient(circle at top left, rgba(193, 68, 14, 0.35), transparent 35%),
+    linear-gradient(135deg, var(--space-black), var(--deep-blue));
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent-blue);
+}
+
+a:focus,
+button:focus {
+  outline: 3px solid var(--mars-orange);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--mars-orange);
+  color: #000;
+  padding: 0.75rem 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* --------------------
+   Header and Navigation
+-------------------- */
+
+.site-header {
+  background: rgba(5, 8, 22, 0.95);
+  border-bottom: 4px solid var(--mars-red);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 1px;
+}
+
+.site-header p {
+  margin: 0.25rem 0 0;
+  color: var(--soft-gray);
+  font-size: 1.1rem;
+}
+
+.site-nav {
+  background: var(--panel-blue);
+}
+
+.site-nav ul {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.site-nav li {
+  margin: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 1rem 1.25rem;
+  color: var(--star-white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  background: var(--mars-red);
+}
+
+/* --------------------
+   Layout
+-------------------- */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(19, 43, 79, 0.9);
+  padding: 2rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero h2,
+.page-title h2 {
+  margin-top: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.1;
+}
+
+.hero img {
+  border-radius: 14px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.button {
+  display: inline-block;
+  background: var(--mars-orange);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  background: #ffb347;
+}
+
+.intro-section,
+.table-section,
+.page-title,
+.callout,
+.faq-list,
+.timeline,
+.mission-grid {
+  background: rgba(5, 8, 22, 0.72);
+  padding: 2rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* --------------------
+   Cards
+-------------------- */
+
+.cards-section h2 {
+  font-size: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.card,
+.info-panel,
+.faq-item {
+  background: rgba(19, 43, 79, 0.95);
+  padding: 1.25rem;
+  border-radius: 16px;
+  border-top: 5px solid var(--mars-orange);
+}
+
+.card img {
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.card h3,
+.info-panel h3,
+.faq-item h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.card ul {
+  padding-left: 1.25rem;
+}
+
+/* --------------------
+   Table
+-------------------- */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--star-white);
+  color: #111;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+caption {
+  padding: 1rem;
+  font-weight: bold;
+  color: var(--star-white);
+  background: var(--mars-red);
+}
+
+th,
+td {
+  padding: 1rem;
+  border: 1px solid #b6b6b6;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--deep-blue);
+  color: var(--star-white);
+}
+
+/* --------------------
+   Timeline
+-------------------- */
+
+.timeline {
+  position: relative;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.timeline-date {
+  background: var(--mars-orange);
+  color: #000;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  align-self: start;
+}
+
+.timeline-content {
+  background: rgba(19, 43, 79, 0.95);
+  padding: 1.25rem;
+  border-left: 6px solid var(--mars-red);
+  border-radius: 12px;
+}
+
+/* --------------------
+   Mission Grid and FAQ
+-------------------- */
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.mission-grid h2 {
+  grid-column: 1 / -1;
+}
+
+.info-panel h4 {
+  color: #ffb347;
+  margin-bottom: 0.25rem;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+}
+
+.callout {
+  border-left: 8px solid var(--mars-orange);
+}
+
+/* --------------------
+   Footer
+-------------------- */
+
+.site-footer {
+  background: #02030a;
+  border-top: 4px solid var(--mars-red);
+  padding: 2rem 1.25rem;
+  text-align: center;
+  color: var(--soft-gray);
+}
+
+.site-footer p {
+  max-width: 900px;
+  margin: 0.5rem auto;
+}
+
+/* --------------------
+   Responsive Design
+-------------------- */
+
+@media (max-width: 850px) {
+  .hero,
+  .card-grid,
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .site-nav ul {
+    flex-direction: column;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 1rem;
+  }
+
+  .hero,
+  .intro-section,
+  .table-section,
+  .page-title,
+  .callout,
+  .faq-list,
+  .timeline,
+  .mission-grid {
+    padding: 1.25rem;
+  }
+
+  th,
+  td {
+    padding: 0.75rem;
+  }
+}
